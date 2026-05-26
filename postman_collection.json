@@ -1,0 +1,63 @@
+{
+	"info": {
+		"_postman_id": "bfhl-api-collection",
+		"name": "BFHL REST API",
+		"description": "Postman Collection for Bajaj Finserv Health Limited (BFHL) REST API",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Process Mixed Data List",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"data\": [\"a\", \"1\", \"334\", \"4\", \"R\", \"$\"]\n}"
+				},
+				"url": {
+					"raw": "{{baseUrl}}/bfhl",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"bfhl"
+					]
+				},
+				"description": "Send mixed array data comprising numbers, alphabets, and special characters to be parsed and categorized."
+			},
+			"response": []
+		},
+		{
+			"name": "Get Operation Code",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{baseUrl}}/bfhl",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"bfhl"
+					]
+				},
+				"description": "Retrieve hardcoded operation status to confirm routing system availability."
+			},
+			"response": []
+		}
+	],
+	"variable": [
+		{
+			"key": "baseUrl",
+			"value": "http://localhost:8080",
+			"type": "string"
+		}
+	]
+}
